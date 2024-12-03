@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BDM Chatbot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+      }
+      h1 {
+        color: #4caf50;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      h3 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+      ul {
+        list-style-type: disc;
+        text-align: left;
+        margin: 0 0 20px 40px;
+        color: #555;
+      }
+      .instructions {
+        margin-bottom: 20px;
+      }
+      label {
+        color: #333;
+        font-size: 1.1em;
+      }
+      .checkbox-container {
+        margin-bottom: 20px;
+      }
+      .button {
+        padding: 12px 24px;
+        font-size: 1.1em;
+        color: white;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .button.enabled {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BDM Chatbot</h1>
+      <p>
+        This chatbot is designed to help IITM BS students working on the BDM
+        project. You can raise queries and get appropriate responses related to
+        the BDM project through this chatbot.
+      </p>
+
+      <h3>Instructions</h3>
+      <ul class="instructions">
+        <li>
+          When entering the chatbot, please enter your official email ID in the
+          format: <strong>XXfXXXXXXX@ds.study.iitm.ac.in</strong>.
+        </li>
+        <li>Then, enter your name.</li>
+        <li>
+          Once you have entered these details correctly, the chatbot will be
+          enabled.
+        </li>
+        <li>You may ask any question regarding the BDM project, such as:</li>
+        <ul>
+          <li>How to write a BDM project proposal?</li>
+          <li>
+            What to keep in mind while writing the mid-term submission for the
+            BDM project?
+          </li>
+          <li>
+            What are the important guidelines for final submission for the BDM
+            project?
+          </li>
+        </ul>
+        <li>
+          Once your queries are complete, put the last query as
+          <strong>"stop"</strong> to close your session with the chatbot.
+        </li>
+        <li>
+          Please <strong>note</strong> that this chatbot does not promote or
+          help in plagiarism, but it ensures that you get relevant information,
+          guidelines, and appropriate examples to help you complete your
+          project.
+        </li>
+      </ul>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="readInstructions" />
+        <label for="readInstructions"
+          >I have read the instructions carefully.</label
+        >
+      </div>
+
+      <button
+        id="openChatbot"
+        class="button"
+        onclick="window.open('https://bdmchatbotapp-bniev3hud3gbhqfzvtzktf.streamlit.app/', '_blank')"
+      >
+        Open Chatbot &#8594;
+      </button>
+    </div>
+
+    <script>
+      const checkbox = document.getElementById("readInstructions");
+      const button = document.getElementById("openChatbot");
+
+      checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+          button.classList.add("enabled");
+        } else {
+          button.classList.remove("enabled");
+        }
+      });
+    </script>
+  </body>
+</html>
